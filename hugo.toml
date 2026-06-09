@@ -1,0 +1,49 @@
+baseURL = "https://zish.github.io"
+title = "J Melanson"
+theme = "blist"
+metaDataFormat = "yaml"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[build]
+  writeStats = true
+
+[params]
+  darkModeToggle = true
+  enableSearch = false
+  favicon = "/favicon.svg"
+  ascentColor = "bg-blue-100"
+  hideMeta = true
+  toc = false
+
+  introTitle = "J Melanson"
+  introSubtitle = ""
+  frontBundle = "projects"
+
+[[menu.main]]
+  name = "Projects"
+  url = "/projects"
+  weight = 1
+
+[markup]
+  [markup.highlight]
+    style = "dracula"
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[caches]
+  [caches.assets]
+    dir = ':resourceDir/_gen'
+    maxAge = -1
+  [caches.getresource]
+    dir = ':cacheDir/:project'
+    maxAge = -1
+  [caches.images]
+    dir = ':cacheDir/images'
+  [caches.misc]
+    dir = ':cacheDir/:project'
+    maxAge = -1
+  [caches.modules]
+    dir = ':cacheDir/modules'
+    maxAge = -1

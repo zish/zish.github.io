@@ -1,0 +1,13 @@
+{{ $href := .Params.github | default .Permalink }}
+{{ $external := .Params.github }}
+<div class="p-2">
+  <a href="{{ $href }}"{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>
+    {{ if .Params.thumbnail }}
+    <div class="relative">
+      <img src="{{ .Params.thumbnail }}" alt="{{ .Params.title }}" class="rounded-lg shadow-sm w-full h-52 object-cover" />
+    </div>
+    {{ end }}
+    <div class="my-2 text-xl font-semibold" style="color: #0d9488;">{{ .Params.title }}</div>
+    <div>{{ .Params.description }}</div>
+  </a>
+</div>
